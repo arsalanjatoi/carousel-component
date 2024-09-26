@@ -1,0 +1,32 @@
+body{
+background:  $primary-color;
+}
+.headbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .pill {
+        padding: 1px 16px 1px 16px;
+        gap: 10px;
+        width: max-content;
+        border-radius: 42px;
+        border: solid 1px $pill_border_color;
+
+        h3 {
+            @include font-face('Recoleta-Regular.ttf');  // Apply the font-family using the mixin
+            font-size: 13px; // Adjust the font size as needed
+            font-weight: 600;
+            color: $pill-color;
+        }
+    }
+    .headline{
+        width: max-content;
+        h1{
+            @include font-face('Recoleta-Regular.ttf');  // Apply the font-family using the mixin
+            font-size: 28px; // Adjust the font size as needed
+            font-weight: 500;
+            margin: 10px 0;
+            color: $headline-color;
+        }
+    }
+}

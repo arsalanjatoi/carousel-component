@@ -1,0 +1,227 @@
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -   box                     - arguments: Orientation: horizontal, Pack: center, Align: center
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+    -   flex                    - arguments: Value: 1
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - Default arguments: What: all, Length: 1s, Easing: ease-in-out
+    -                            - Examples: @include transition (all 2s ease-in-out);
+    -                                        @include transition (opacity 1s ease-in 2s, width 2s ease-out);
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX */
+/* BOX RGBA */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* DOUBLE BORDERS */
+/* FLEX */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+body {
+  background: #003E33;
+}
+
+.headbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headbar .pill {
+  padding: 1px 16px 1px 16px;
+  gap: 10px;
+  width: max-content;
+  border-radius: 42px;
+  border: solid 1px #DBA14D;
+}
+.headbar .pill h3 {
+  font-family: "Recoleta-Regular.ttf";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"), url("../../css/fonts/ttfFileSrc") format("truetype");
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(248, 243, 240, 0.8);
+}
+.headbar .headline {
+  width: max-content;
+}
+.headbar .headline h1 {
+  font-family: "Recoleta-Regular.ttf";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"), url("../../css/fonts/ttfFileSrc") format("truetype");
+  font-size: 28px;
+  font-weight: 500;
+  margin: 10px 0;
+  color: #F8F3F0;
+}
+
+.main {
+  width: 80%;
+  margin: auto;
+}
+@media only screen and (max-width: 767.98px) {
+  .main {
+    width: 100%;
+  }
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 270px;
+}
+.carousel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, #003E33 13%, rgba(0, 62, 51, 0.71) 20%, rgba(0, 62, 51, 0) 30%, rgba(0, 62, 51, 0) 70%, rgba(0, 62, 51, 0.7) 80%, #003E33 87%);
+  pointer-events: none;
+}
+@media only screen and (max-width: 991.98px) {
+  .carousel::before {
+    background: none;
+  }
+}
+.carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #003E33 13%, rgba(0, 62, 51, 0.71) 20%, rgba(0, 62, 51, 0) 30%, rgba(0, 62, 51, 0) 70%, rgba(0, 62, 51, 0.7) 80%, #003E33 87%);
+  pointer-events: none;
+}
+@media only screen and (max-width: 991.98px) {
+  .carousel::after {
+    background: none;
+  }
+}
+.carousel__inner {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+.carousel__item {
+  min-width: calc(25% - 10px);
+  transition: opacity 0.5s ease;
+}
+.carousel__item--active {
+  opacity: 1;
+}
+.carousel__item:not(.carousel__item--active) {
+  opacity: 1;
+}
+@media only screen and (max-width: 991.98px) {
+  .carousel__item {
+    text-align: center;
+  }
+}
+.carousel__control {
+  position: absolute;
+  bottom: 15px;
+  background-color: #003E33;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 8px 16px;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  border: 1px solid rgba(248, 243, 240, 0.4);
+}
+@media only screen and (max-width: 991.98px) {
+  .carousel__control {
+    transform: unset;
+    left: auto;
+  }
+}
+.carousel__control:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.carousel__control:hover {
+  color: #333;
+}
+.carousel .carousel__control--prev {
+  left: 45%;
+}
+@media only screen and (max-width: 991.98px) {
+  .carousel .carousel__control--prev {
+    left: 35%;
+  }
+}
+.carousel .carousel__control--next {
+  right: 40%;
+}
+@media only screen and (max-width: 991.98px) {
+  .carousel .carousel__control--next {
+    right: 35%;
+  }
+}
+.carousel .carousel__control svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=style.css.map */
